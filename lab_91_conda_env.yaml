@@ -1,0 +1,36 @@
+# Run: conda env create -f lab_91_conda_env.yaml
+name: lab_91_cltv
+channels:
+  - defaults
+  - conda-forge # For pymc-marketing
+dependencies:
+  # Python 201-P Data Science & ML Stack:
+  - python=3.9
+  - pandas
+  - scikit-learn
+  - statsmodels
+  - xgboost
+  - plotly
+  - matplotlib
+  - ipykernel
+  - nbformat
+  - pymc-marketing
+  - pip
+  - pip:
+      - plotnine
+      - pycaret
+      - lifetimes
+      - shap
+      - xarray==2023.10.1 # Temporary fix for xarray compat with pytimetk and pandas_flavor
+      - pytimetk 
+
+# TROUBLESHOOTING:
+#  - This file is used to create a conda environment for the lab.
+#  - The environment is essentially the same as the DS4B 201-P course environment with:
+#    - conda install -c conda-forge pymc-marketing
+#    - pip install lifetimes
+#    - pip install pytimetk
+#  - The environment is created using the command: conda env create -f lab_91_conda_env.yaml
+#  - If you run into errors: Do pip installs manually.
+#  - Run conda list to verify the environment is correct.
+
